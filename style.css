@@ -1,0 +1,172 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+
+  cursor: default;
+}
+
+:root {
+  --clr-blue-light: #4c00ff;
+  --clr-blue-med: #0c1032;
+  --clr-pink-med: #e000b7;
+  --clr-font-light: #ffffff;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.counter {
+  background-image: url('images/train-bg-1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter-card {
+  background-color: var(--clr-blue-med);
+
+  width: 350px;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+
+  border: 5px solid var(--clr-pink-med);
+  border-radius: 10px;
+
+  box-shadow: 0px 0px 25px 10px rgba(224, 0, 183, 0.8),
+    inset 0px 0px 25px 10px rgba(224, 0, 183, 0.65);
+}
+
+.counter-card div {
+  margin: 5px 0;
+}
+
+/* title */
+.counter-card-title {
+  color: var(--clr-font-light);
+}
+
+.counter-card-title h2 {
+  margin-top: 10px;
+}
+
+/* value */
+.counter-card-value {
+  color: var(--clr-font-light);
+}
+
+/* buttons */
+.counter-card-button button {
+  padding: 2px 5px;
+  border-radius: 2px;
+
+  cursor: pointer;
+}
+
+/* + button */
+.counter-card-button button:nth-child(1) {
+  background-color: green;
+  border: 2px solid #006100;
+}
+
+/* - button */
+.counter-card-button button:nth-child(2) {
+  background-color: #db0000;
+  border: 2px solid #bd0000;
+}
+
+/* radio buttons */
+.counter-card-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter-card-checkbox div {
+  display: flex;
+  flex-direction: column;
+  color: var(--clr-font-light);
+  font-weight: 700;
+  margin: 10px 5px 0;
+}
+
+/* css radio buttons */
+.counter-card-checkbox input[type='radio'] {
+  appearance: none;
+
+  margin-top: 5px;
+
+  font: var(--clr-font-light);
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.counter-card-checkbox input[type='radio']::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--clr-pink-med);
+}
+
+.counter-card-checkbox input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+.counter-card-checkbox input[type="radio"]:focus {
+  outline: max(2px, 0.15em) solid currentColor;
+  outline-offset: max(2px, 0.15em);
+}
+
+.counter-card-checkbox div:focus-within {
+  color: var(--clr-pink-med);
+}
+
+/* saved info */
+.counter-card-saved {
+  color: var(--clr-font-light);
+}
+
+.counter-card-saved button {
+  padding: 3px 8px;
+  background: linear-gradient(to right, var(--clr-pink-med) 0%, var(--clr-blue-light) 100%);
+  border-radius: 4px;
+  color: var(--clr-font-light);
+  font-weight: 800;
+  border: 1px solid white;
+  margin-bottom: 10px;
+
+  cursor: pointer;
+}
+
+/* saved list */
+.counter-card-saved p {
+  color: var(--clr-pink-med);
+}
